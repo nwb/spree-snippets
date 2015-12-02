@@ -24,7 +24,7 @@ raise "Snippet '#{snippet}' not found"
 
   # render if snippet slug is there
   def render_snippet(slug)
-    if @snippet = Spree::Snippet.find_by_slug(snippet)
+    if @snippet = Spree::Snippet.find_by_slug(slug)
       template = ERB.new File.read(File.expand_path(snippet_wrapper_absolute_path))
       template.result(binding).html_safe
     end
